@@ -68,7 +68,7 @@
 					new DeathRocket();
 				}).bind(this), spacing);
 
-				spacing -= 100;
+				spacing = Math.max(spacing - 100, 300);
 			}
 
 			DeathRocket.prototype.applyRotation = function() {
