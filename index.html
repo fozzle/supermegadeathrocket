@@ -3,11 +3,18 @@
 	<head>
 		<title>SUPER MEGA DEATH ROCKET</title>
 		<style>
+			html, body {
+				height: 100%;
+			}
 			body {
 				padding: 0;
 				margin: 0;
 				background: black;
 				overflow: hidden;
+
+				background-image: url('teemo.png');
+				background-position: center center;
+				background-repeat: no-repeat;
 			}
 
 			#byebye {
@@ -24,7 +31,7 @@
 	<audio id="byebye" src="byebye.mp3"></audio>
 	<script>
 		(function() {
-			var rocketFireInterval, spacing = 2000, sides = []
+			var rocketFireInterval, spacing = 4000, sides = []
 			/* make a dumb rocket */
 			var DeathRocket = function() {
 				// Play sound
@@ -57,15 +64,11 @@
 					this.el.style.top = window.innerHeight/2 + "px";
 				}).bind(this), 10);
 
-				setTimeout(function() {
+				setTimeout((function() {
 					new DeathRocket();
-				}, spacing);
+				}).bind(this), spacing);
 
-				setTimeout(function() {
-					this.el.remove();
-				}, 5000);
-
-				spacing -= 200;
+				spacing -= 100;
 			}
 
 			DeathRocket.prototype.applyRotation = function() {
