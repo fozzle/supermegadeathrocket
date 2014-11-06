@@ -76,9 +76,7 @@
 				center.x = window.innerWidth/2;
 				center.y = window.innerHeight/2;
 
-				console.log("rotating", Math.atan2(this.leftSpawn - center.x, this.topSpawn - center.y), "with", this.leftSpawn, this.topSpawn);
-
-				this.el.style.transform = "rotate(" + Math.atan2(this.leftSpawn - center.x, this.topSpawn - center.y) + "rad)";
+				this.el.style.transform = "rotate(" + -Math.atan2(center.y - this.topSpawn, this.leftSpawn - center.x) + "rad)";
 			}
 
 			DeathRocket.prototype.spawnVert = function() {
